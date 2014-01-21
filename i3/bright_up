@@ -1,0 +1,11 @@
+#! /bin/bash
+
+max_brightness=$(cat /sys/class/backlight/acpi_video0/max_brightness)
+brightness=$(cat /sys/class/backlight/acpi_video0/brightness)
+
+if (($brightness<$max_brightness))
+then
+     let brightness=$brightness+1
+fi
+
+echo $brightness > /sys/class/backlight/acpi_video0/brightness

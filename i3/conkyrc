@@ -1,0 +1,53 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+# Update interval in seconds
+update_interval 5.0
+total_run_times 0
+override_utf8_locale yes
+short_units yes
+
+TEXT
+[
+{
+    "full_text":"vol: ${exec amixer get Master | grep -oE "[[:digit:]]*%" | grep -o "[0-9]*"}",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text":"dsk: ${fs_free}",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text":"ram: ${memfree}",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text":"bat: ${battery_percent BAT0}%",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text":"eth: ${addr eth0}",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text":"cpu: ${cpu cpu0}%",
+    "color":"\#657b82",
+    "separator":false
+},
+{
+    "full_text": "temp: ${hwmon 1 temp 2}°C",
+    "color":"\#657b82"
+},
+{
+    "full_text":"${time %b %d %H:%M}",
+    "color":"\#657b82",
+    "separator":false
+}
+],
